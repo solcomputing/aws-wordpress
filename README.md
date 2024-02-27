@@ -23,7 +23,7 @@ git push -uf origin main
 
 # Architecture
 <img
-  src="https://gitlab.com/aws-solcomputing/wordpress/-/raw/prod/wordpress-aws.png?inline=false"
+  src="https://gitlab.com/aws-solcomputing/wordpress/-/raw/main/wordpress-aws.png?inline=false"
   alt="Alt text"
   title="Optional title"
   style="display: inline-block; margin: 0 auto;">

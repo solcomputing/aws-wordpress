@@ -44,8 +44,12 @@ Use the built-in continuous integration in GitLab.
 
 ***
 
-# Editing this README
-![alt text](https://gitlab.com/aws-solcomputing/wordpress/-/blob/prod/wordpress-aws.png?raw=true)
+# Architecture
+<img
+  src="https://gitlab.com/aws-solcomputing/wordpress/-/blob/prod/wordpress-aws.png?raw=true"
+  alt="Alt text"
+  title="Optional title"
+  style="display: inline-block; margin: 0 auto;">
 
 When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
 

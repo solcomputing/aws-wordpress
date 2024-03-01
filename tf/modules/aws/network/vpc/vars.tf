@@ -5,20 +5,38 @@ variable "vpc_azs" {
  default     = ["eu-west-1a"]
 }
 
+variable "vpc_cidr_block" {
+default = "10.0.0.0/16"
+description = "VPC: Region"
+type = string
+}
+
+variable "vpc_region" {
+default = ""
+description = "VPC: Region"
+type = string
+}
+
 variable "vpc_name" {
 default = "wordpress"
-description = "VPC: Region/Zone/Name"
+description = "VPC: default"
 type = string
 }
 
 variable "vpc_public_subnet" {
  type        = list(string)
- description = "Public Subnet CIDR values"
+ description = "Public public Subnet CIDR values"
  default     = []
 }
  
-variable "vpc_private_subnet" {
+variable "vpc_app_subnet" {
  type        = list(string)
- description = "Private Subnet CIDR values"
+ description = "Private app Subnet CIDR values"
+ default     = []
+}
+
+variable "vpc_db_subnet" {
+ type        = list(string)
+ description = "Private db Subnet CIDR values"
  default     = []
 }

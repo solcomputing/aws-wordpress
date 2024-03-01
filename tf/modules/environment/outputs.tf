@@ -1,3 +1,3 @@
 output "env" {
-  value = local.environments[var.environment]
+  value = local.environments["${terraform.workspace}"]
 }

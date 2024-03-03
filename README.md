@@ -23,6 +23,7 @@ git push -uf origin main
 
 # Architecture
 <img
+<<<<<<< HEAD
   src="https://gitlab.com/aws-solcomputing/wordpress/-/raw/main/docs/wordpress-aws.png?inline=false"
   alt="Alt text"
   title="Optional title"
@@ -30,6 +31,9 @@ git push -uf origin main
 <a href="https://drive.google.com/file/d/1a68pDQ79qChdIQgTmP2NlfK5ksar3PQh/view?usp=sharing">sources</a>
 <img
   src="https://gitlab.com/aws-solcomputing/wordpress/-/raw/main/docs/VPC.jpg"
+=======
+  src="https://gitlab.com/aws-solcomputing/wordpress/-/raw/prod/wordpress-aws.png?inline=false"
+>>>>>>> 4242baf (Update README.md)
   alt="Alt text"
   title="Optional title"
   style="display: inline-block; margin: 0 auto;">

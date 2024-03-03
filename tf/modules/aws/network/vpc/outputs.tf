@@ -1,5 +1,5 @@
 output "aws_vpc_id" {
-   value = aws_vpc.main.id
+   value = aws_vpc.this.id
 }
 
 output "vpc_public_subnet_azs" {
@@ -58,6 +58,11 @@ output "vpc_default_gateway_id" {
 output "vpc_aws_route_table_public_subnet_ids" {
   value = aws_route_table.public_subnet.*.id
 }
+
+output "vpc_aws_route_table_app_subnet_ids" {
+  value = aws_route_table.app_subnet.*.id
+}
+
 
 output "vpc_nat_gateways" {
   value = aws_nat_gateway.NGW.*.id

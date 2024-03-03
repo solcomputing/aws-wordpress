@@ -28,3 +28,8 @@ git push -uf origin main
   title="Optional title"
   style="display: inline-block; margin: 0 auto;">
 <a href="https://drive.google.com/file/d/1a68pDQ79qChdIQgTmP2NlfK5ksar3PQh/view?usp=sharing">sources</a>
+<img
+  src="https://gitlab.com/aws-solcomputing/wordpress/-/raw/main/docs/VPC.jpg"
+  alt="Alt text"
+  title="Optional title"
+  style="display: inline-block; margin: 0 auto;">

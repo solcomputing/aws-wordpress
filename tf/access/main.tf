@@ -19,7 +19,7 @@ module "IAM_admin_groups" {
     organization       = module.settings.env.group.organization
     group_name         = module.settings.env.group.group_name
     group_iam          = module.settings.env
-    policies           = module.IAM_policies.arn_policies
+    policies           = module.IAM_policies.arn_policies_RW
     depends_on         = [
         module.IAM_policies
     ]

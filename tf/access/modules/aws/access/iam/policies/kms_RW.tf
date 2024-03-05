@@ -1,4 +1,4 @@
-data "aws_iam_policy_document" "keyAccess" {
+data "aws_iam_policy_document" "keyAccess_RW" {
   statement {
     actions = [
       "kms:CreateAlias",      
@@ -24,9 +24,9 @@ data "aws_iam_policy_document" "keyAccess" {
   }
 }
 
-resource "aws_iam_policy" "keyAccess" {
-   name        = "aws-${var.entity}keyAccessPolicy"
-   description = "aws-${var.entity}keyAccessPolicy"
-   policy      = data.aws_iam_policy_document.keyAccess.json
+resource "aws_iam_policy" "keyAccess_RW" {
+   name        = "aws-${var.entity}keyAccessPolicy-RW"
+   description = "aws-${var.entity}keyAccessPolicy-RW"
+   policy      = data.aws_iam_policy_document.keyAccess_RW.json
 }
 

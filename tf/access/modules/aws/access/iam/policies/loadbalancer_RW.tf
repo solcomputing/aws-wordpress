@@ -1,4 +1,4 @@
-data "aws_iam_policy_document" "load_balancer_management" {
+data "aws_iam_policy_document" "load_balancer_management_RW" {
   statement {
     actions = [
       "iam:CreateServiceLinkedRole",
@@ -207,8 +207,8 @@ data "aws_iam_policy_document" "load_balancer_management" {
   }
 }
 
-resource "aws_iam_policy" "load_balancer_management" {
-  name   = "aws-${var.entity}${var.group_name}LoadbalancerPolicy"
+resource "aws_iam_policy" "load_balancer_management_RW" {
+  name   = "aws-${var.entity}${var.group_name}LoadbalancerPolicy-RW"
   path   = "/"
-  policy = data.aws_iam_policy_document.load_balancer_management.json
+  policy = data.aws_iam_policy_document.load_balancer_management_RW.json
 }

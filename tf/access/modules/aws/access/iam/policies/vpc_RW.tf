@@ -1,7 +1,7 @@
-data "aws_iam_policy_document" "vpcPolicy" {
+data "aws_iam_policy_document" "vpcPolicy_RW" {
   statement {
     actions = [
-        "ec2:CreateVpc",
+                "ec2:CreateVpc",
 				"ec2:CreateTags",
 				"ec2:DescribeVpcs",
 				"ec2:DescribeVpcAttribute",
@@ -27,13 +27,15 @@ data "aws_iam_policy_document" "vpcPolicy" {
 				"ec2:DeleteRoute",
 				"ec2:DisassociateAddress",
 				"ec2:DetachInternetGateway",
+				"ec2:AllocateAddress",
+				"ec2:ReleaseAddress"
     ]
     resources = ["*"]
   }
 }
 
-resource "aws_iam_policy" "vpcPolicy" {
-  name   = "aws-${var.entity}${var.group_name}VPCGroupPolicy"
+resource "aws_iam_policy" "vpcPolicy_RW" {
+  name   = "aws-${var.entity}${var.group_name}VPCGroupPolicy-RW"
   path   = "/"
-  policy = data.aws_iam_policy_document.vpcPolicy.json
+  policy = data.aws_iam_policy_document.vpcPolicy_RW.json
 }

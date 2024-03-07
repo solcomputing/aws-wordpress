@@ -1,6 +1,7 @@
 data "aws_iam_policy_document" "keyAccess_RW" {
   statement {
     actions = [
+      "iam:ListPolicies",
       "kms:CreateAlias",      
       "kms:CreateGrant",
       "kms:DeleteAlias",
@@ -12,7 +13,12 @@ data "aws_iam_policy_document" "keyAccess_RW" {
       "kms:TagResource",
       "kms:UntagResource",
       "kms:UpdateAlias",
-      "kms:UpdateKeyDescription"
+      "kms:UpdateKeyDescription",
+      "kms:EnableKeyRotation",
+      "kms:DescribeKey",
+      "kms:GetKeyPolicy",
+      "kms:GetKeyRotationStatus",
+      "kms:ListResourceTags"
     ]
 
     resources = ["*"]

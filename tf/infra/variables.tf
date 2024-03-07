@@ -11,7 +11,7 @@ type = string
 }
 
 variable "VAULT_TOKEN" {
-default     = "hvs.CAESIHv5ZbULybH8ofrKcW1cnlx230C6K_NWalegJ5sQPionGicKImh2cy42eHNPU1FqVXp6V3lRRUVINWVsN201M24uYkhudmsQ1Fc"
+default     = "hvs.CAESIMQi_PSNdLt72_Ph74zh6ZTlNX7GdCh2WBUX1w8a6wkBGigKImh2cy5TMHFiQlVUNlRPbkFqUzR0TWF4SGVqMkEuYkhudmsQzr8B"
 description = "Hashicorp Vault Token"
 type = string
 }

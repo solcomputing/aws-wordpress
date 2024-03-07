@@ -34,6 +34,12 @@ variable "clustername" {
   default     = "WORDPRESS"
 }
 
+variable "entity" {
+  type        = string
+  description = "entity Cluster Name"
+  default     = "solcomputing"
+}
+
 variable "eks_cluster_region" {
    type        = string
    description = "EKS Cluster Region"
@@ -45,3 +51,8 @@ variable "eks_policy_user" {
    description = "Account builder"
    default     = "xxxxxxxx" 
 }
+
+#variable "subnet_id_1" {}
+#variable "subnet_id_2" {}
+variable "subnet_ids" {}
+variable "principal" {}

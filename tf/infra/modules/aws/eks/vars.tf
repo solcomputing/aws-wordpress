@@ -49,10 +49,9 @@ variable "eks_cluster_region" {
 variable "eks_policy_user" {
    type        = string
    description = "Account builder"
-   default     = "xxxxxxxx" 
+   default     = "" 
 }
 
-#variable "subnet_id_1" {}
-#variable "subnet_id_2" {}
+variable "instance_types" {}
 variable "subnet_ids" {}
 variable "principal" {}

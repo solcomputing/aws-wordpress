@@ -26,8 +26,9 @@ module "_VPC_" {
 
 module "_EKS_" {
     source             = "./modules/aws/eks"
+    principal          = module.environment.env.accountbuilder
     clustername        = "${module.environment.env.vpc_name}_${var.PROJECT_NAME}_${terraform.workspace}"
     entity             = module.environment.env.organization
     subnet_ids         = module._VPC_.vpc_app_subnet_azs[*]
-    principal          = module.environment.env.accountbuilder
+    instance_types     = module.environment.env.node_pool_machine_type
 }

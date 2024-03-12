@@ -11,7 +11,9 @@ data "aws_iam_policy_document" "vpcPolicy_RO" {
 				"ec2:DescribeInternetGateways",
 				"ec2:DeleteRouteTable",
 				"ec2:AllocateAddress",
-				"ec2:ReleaseAddress"
+				"ec2:ReleaseAddress",
+				"ec2:GetSubnetCidrReservations",
+				"ec2:DescribeNetworkAcls"
     ]
     resources = ["*"]
   }

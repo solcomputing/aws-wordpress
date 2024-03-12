@@ -2,7 +2,7 @@ data "aws_iam_policy_document" "ecr_RO" {
   statement {
     actions = [
 		"ecr:ListTagsForResource",
-    "ecr:DescribeRepositories",
+        "ecr:DescribeRepositories",
     ]
     resources = ["*"]
   }

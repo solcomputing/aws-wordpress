@@ -21,7 +21,7 @@ provider "vault" {
 }
 
 data "vault_generic_secret" "aws_auth" {
-  path = "secret/aws/default"
+  path = "secret/aws/dst"
 }
 
 provider "aws" {

@@ -10,7 +10,7 @@ terraform {
   cloud {
     organization = "SOLCOMPUTING"
     workspaces {
-      name = "%WORKSPACE%"
+      name = "DST_%WORKSPACE%"
     }
   }
 }

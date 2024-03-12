@@ -1,29 +1,31 @@
 data "aws_iam_policy_document" "keyAccess_RW" {
   statement {
     actions = [
-      "iam:ListPolicies",
-      "kms:CreateAlias",      
-      "kms:CreateGrant",
-      "kms:DeleteAlias",
       "kms:DisableKey",
-      "kms:EnableKey",
-      "kms:PutKeyPolicy",
       "kms:RevokeGrant",
       "kms:ScheduleKeyDeletion",
-      "kms:TagResource",
+      "kms:Tag*",
       "kms:UntagResource",
-      "kms:UpdateAlias",
-      "kms:UpdateKeyDescription",
       "kms:EnableKeyRotation",
       "kms:DescribeKey",
-      "kms:GetKeyPolicy",
-      "kms:GetKeyRotationStatus",
-      "kms:ListResourceTags"
+      "kms:Create*",
+      "kms:CreateKey",
+      "kms:Describe*",
+      "kms:Enable*",
+      "kms:List*",
+      "kms:Put*",
+      "kms:Update*",
+      "kms:Revoke*",
+      "kms:Disable*",
+      "kms:Get*",
+      "kms:Delete*",
+      "kms:TagResource",
+      "kms:UntagResource",
+      "kms:ScheduleKeyDeletion",
+      "kms:CancelKeyDeletion"
     ]
-
-    resources = ["*"]
+    resources = var.arnaccount
   }
-
   statement {
     actions = ["kms:CreateKey"]
     resources = ["*"]

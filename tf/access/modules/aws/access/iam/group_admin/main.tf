@@ -1,32 +1,24 @@
 resource "aws_iam_user" "administrator" {
-  count    = length(var.group_iam.group.group_members)
-  name     = var.group_iam.group.group_members[count.index]
+  count        = length(var.group_iam.group.group_members)
+  name         = var.group_iam.group.group_members[count.index]
 }
 
 resource "aws_iam_group" "group" {
-    name = "${var.group_name}"
-}
-
-
-resource "aws_iam_policy_attachment" "group-attach-policies" {
-  count = length(var.policies)
-  name  = join("_", ["policygroup-attachment", var.group_name, element(var.policies, count.index)])
-  groups     = [aws_iam_group.group.name]
-  policy_arn = element(var.policies, count.index)
+    name       = "${var.group_name}"
 }
 
 resource "aws_iam_access_key" "administrator" {
-  count    = length(var.group_iam.group.group_members)
-  user     = var.group_iam.group.group_members[count.index]
+  count        = length(var.group_iam.group.group_members)
+  user         = var.group_iam.group.group_members[count.index]
       depends_on = [
                aws_iam_user.administrator
     ]
 }
 
 resource "aws_iam_user_login_profile" "administrator" {
-    count     = length(var.group_iam.group.group_members)
-    user      = var.group_iam.group.group_members[count.index]
-#    pgp_key   = "keybase:${var.group_iam.group.group_members[count.index]}"
+    count      = length(var.group_iam.group.group_members)
+    user       = var.group_iam.group.group_members[count.index]
+#   pgp_key    = "keybase:${var.group_iam.group.group_members[count.index]}"
     password_reset_required = false
     depends_on = [
                aws_iam_access_key.administrator
@@ -34,10 +26,10 @@ resource "aws_iam_user_login_profile" "administrator" {
 }
 
 resource "aws_iam_group_membership" "group" {
-   name       = var.group_name
-   group      = aws_iam_group.group.name
-   users      = var.group_iam.group.group_members
-   depends_on = [ 
+   name        = var.group_name
+   group       = aws_iam_group.group.name
+   users       = var.group_iam.group.group_members
+   depends_on  = [ 
     aws_iam_group.group,
     aws_iam_access_key.administrator
    ]
@@ -50,6 +42,7 @@ resource "vault_generic_secret" "administrator" {
    data_json    = jsonencode({
     "AWS_ACCESS_KEY_${var.group_iam.group.group_members[count.index]}" = aws_iam_access_key.administrator[count.index].id
     "AWS_SECRET_KEY_${var.group_iam.group.group_members[count.index]}" = aws_iam_access_key.administrator[count.index].secret
+    "AWS_PASS_${var.group_iam.group.group_members[count.index]}" = aws_iam_user_login_profile.administrator[count.index].password
   })
   depends_on = [ 
     aws_iam_user.administrator,

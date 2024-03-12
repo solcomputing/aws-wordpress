@@ -7,6 +7,7 @@ data "aws_iam_policy_document" "eks_RW" {
       "EKS:CreateNodegroup",
       "EKS:ListFargateProfiles",
       "EKS:DescribeNodegroup",
+      "EKS:AccessPolicy",
       "EKS:ListNodegroups",
       "EKS:ListUpdates",
       "EKS:AccessKubernetesApi",
@@ -14,8 +15,11 @@ data "aws_iam_policy_document" "eks_RW" {
       "EKS:DescribeCluster",
       "EKS:DeleteNodegroup",
       "EKS:DescribeAddonVersions",
+      "EKS:DescribeUpdate",
       "EKS:ListClusters",
       "EKS:ListIdentityProviderConfigs",
+      "EKS:UpdateClusterConfig",
+      "EKS:UpdateNodegroupConfig",
       "iam:ListRoles"
     ]
     resources = ["*"]

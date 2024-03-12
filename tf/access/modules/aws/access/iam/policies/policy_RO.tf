@@ -1,8 +1,8 @@
 data "aws_iam_policy_document" "operationonPolicy_RO" {
   statement {
     actions = [
-		"iam:GetPolicy",
-		"iam:ListPolicy",
+	"iam:GetPolicy",
+	"iam:ListPolicy",
         "iam:DescribePolicy",
         "iam:GetPolicyVersion"
     ]

@@ -10,7 +10,8 @@ data "aws_iam_policy_document" "operationonPolicy_RW" {
     "iam:AttachRolePolicy",
     "iam:UpdateAssumeRolePolicy",
     "iam:PassRole",
-    "iam:DetachRolePolicy"
+    "iam:DetachRolePolicy",
+    "iam:ListPolicies"
     ]
     resources = ["*"]
   }

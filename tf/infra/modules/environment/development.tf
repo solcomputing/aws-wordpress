@@ -2,9 +2,9 @@ locals {
 development = {
     workspace              = "development"
     organization           = "solcomputing"
-    defaultaccount         = "TERRAFORM"
+    defaultaccount         = "student17_jan24_bootcamp_devops_services"
     accountbuilder         = "terraform_admin_development"
-    node_pool_machine_type = ["t3.micro"]
+    node_pool_machine_type = ["t3.small"]
     azs                    = ["eu-west-3a", "eu-west-3b", "eu-west-3c"]
     vpc_name               = "VPC_DEV",
     vpc_region             = "eu-west-3",

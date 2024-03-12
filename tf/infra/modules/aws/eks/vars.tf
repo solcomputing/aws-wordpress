@@ -28,7 +28,7 @@ variable "cluster_encryption_config_enabled" {
   default     = true
 }
 
-variable "clustername" {
+variable "cluster_name" {
   type        = string
   description = "EKS Cluster Name"
   default     = "WORDPRESS"
@@ -52,6 +52,12 @@ variable "eks_policy_user" {
    default     = "" 
 }
 
+variable "cicd_agent_namespace" {
+   type        = string
+   default     = "cicd"
+}
+
 variable "instance_types" {}
-variable "subnet_ids" {}
+variable "subnet_private_ids" {}
+variable "subnet_public_ids" {}
 variable "principal" {}

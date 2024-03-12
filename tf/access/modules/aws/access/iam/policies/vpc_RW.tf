@@ -28,7 +28,8 @@ data "aws_iam_policy_document" "vpcPolicy_RW" {
 				"ec2:DisassociateAddress",
 				"ec2:DetachInternetGateway",
 				"ec2:AllocateAddress",
-				"ec2:ReleaseAddress"
+				"ec2:ReleaseAddress",
+				"ec2:GetSubnetCidrReservations"
     ]
     resources = ["*"]
   }

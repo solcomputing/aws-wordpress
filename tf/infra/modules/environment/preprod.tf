@@ -1,7 +1,8 @@
 locals {
 preprod = {
+    workspace              = "preprod"
     organization           = "solcomputing"
-    defaultaccount         = "TERRAFORM"
+    defaultaccount         = "student17_jan24_bootcamp_devops_services"
     accountbuilder         = "terraform_preprod"
     node_pool_machine_type = ["t3.2xlarge"]
     azs                    = ["eu-west-3a", "eu-west-3b", "eu-west-3c"]

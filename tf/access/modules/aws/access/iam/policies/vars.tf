@@ -19,6 +19,6 @@ variable "entity" {
 
 variable "arnaccount" {
   description = "arn account policy"
-  type        = string
-  default     = "*"
+  type        = list
+  default     = []
 }

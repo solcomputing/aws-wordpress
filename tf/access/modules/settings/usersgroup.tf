@@ -1,7 +1,7 @@
 locals {
     settings        = {  
                           organization         = "solcomputing"
-                          defaultaccount       = "TERRAFORM"
+                          defaultaccount       = "student17_jan24_bootcamp_devops_services"
                           accountbuilder       = "terraform_admin_development"
                           region               = "eu-west-3"
                           group = {
